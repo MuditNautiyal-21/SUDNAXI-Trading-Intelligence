@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Simple launcher for SUDNAXI Trading Platform
-Perfect for PyCharm and other IDEs
-"""
 import subprocess
 import sys
 import os

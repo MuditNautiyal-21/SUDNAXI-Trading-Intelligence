@@ -1,5 +1,5 @@
 """
-Database models for the professional trading platform
+Database models for the professional trading platform - To be setup later in future updates
 """
 from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime, Text, Boolean, JSON
 from sqlalchemy.ext.declarative import declarative_base

@@ -15,7 +15,6 @@ from database.models import init_database, get_db_session
 # Configure page
 st.set_page_config(
     page_title="SUDNAXI - Professional Trading Intelligence",
-    page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -273,36 +272,36 @@ def main():
     st.markdown("""
     <div style="text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); border-radius: 20px; margin-bottom: 2rem; border: 1px solid #475569; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1); position: relative; overflow: hidden;">
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #00FF88 0%, #00D97F 50%, #00FF88 100%);"></div>
-        <h1 class="header-glow" style="color: #00FF88; font-size: 3.5rem; margin: 0; font-weight: 700; letter-spacing: -0.02em;">🚀 SUDNAXI</h1>
+        <h1 class="header-glow" style="color: #00FF88; font-size: 3.5rem; margin: 0; font-weight: 700; letter-spacing: -0.02em;">SUDNAXI</h1>
         <h2 style="color: #f8fafc; font-size: 1.8rem; margin: 1rem 0; font-weight: 400; opacity: 0.9;">AI-Powered Trading Intelligence Platform</h2>
         <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
-            <span style="color: #00FF88; font-weight: 600;">📊 ML Backtesting</span>
-            <span style="color: #00D97F; font-weight: 600;">🤖 Adaptive AI</span>
-            <span style="color: #22c55e; font-weight: 600;">📈 Real-time Analysis</span>
-            <span style="color: #10b981; font-weight: 600;">📰 News Sentiment</span>
+            <span style="color: #00FF88; font-weight: 600;">ML Backtesting</span>
+            <span style="color: #00D97F; font-weight: 600;">Adaptive AI</span>
+            <span style="color: #22c55e; font-weight: 600;">Real-time Analysis</span>
+            <span style="color: #10b981; font-weight: 600;">News Sentiment</span>
         </div>
         <p style="color: #94a3b8; margin: 1.5rem 0 0 0; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">Professional-grade trading platform with machine learning, adaptive strategies, and comprehensive market intelligence</p>
     </div>
     """, unsafe_allow_html=True)
     
     # Important disclaimer
-    with st.expander("⚠️ Important Disclaimer - READ BEFORE USING", expanded=False):
+    with st.expander("Important Disclaimer - READ BEFORE USING", expanded=False):
         st.warning("""
         **EDUCATIONAL PURPOSE ONLY - NOT INVESTMENT ADVICE**
         
         This application is designed for educational purposes and trading simulation only. Please note:
         
-        🚨 **Trading Simulation Only**: This app provides a paper trading simulator, not real trading capabilities
+        **Trading Simulation Only**: This app provides a paper trading simulator, not real trading capabilities
         
-        📊 **No Real Money**: All trades are simulated with virtual money for learning purposes
+        **No Real Money**: All trades are simulated with virtual money for learning purposes
         
         ⚡ **Data Limitations**: Yahoo Finance free API has limitations - real trading requires premium data feeds
         
-        🎯 **Educational Tool**: Use this to learn technical analysis and practice trading strategies risk-free
+        **Educational Tool**: Use this to learn technical analysis and practice trading strategies risk-free
         
-        💼 **Investment Advice**: This is NOT professional investment advice. Always consult qualified financial advisors
+        **Investment Advice**: This is NOT professional investment advice. Always consult qualified financial advisors
         
-        🔒 **Risk Warning**: Real trading involves significant financial risk. Never invest more than you can afford to lose
+        **Risk Warning**: Real trading involves significant financial risk. Never invest more than you can afford to lose
         
         **For Real Trading**: Use licensed brokers with proper risk management, real-time data, and professional tools
         """)
@@ -449,7 +448,7 @@ def main():
         # Advanced Features Section
         st.markdown("""
         <div class="metric-card">
-            <h3 style="color: #00FF88; margin: 0 0 1rem 0;">🚀 Advanced Features</h3>
+            <h3 style="color: #00FF88; margin: 0 0 1rem 0;">Advanced Features</h3>
         </div>
         """, unsafe_allow_html=True)
         
@@ -457,19 +456,19 @@ def main():
         col1, col2 = st.columns(2)
         
         with col1:
-            auto_refresh = st.checkbox("🔄 Real-time Auto-refresh", value=False, 
+            auto_refresh = st.checkbox("Real-time Auto-refresh", value=False,
                                      help="Enable automatic data refresh for live trading")
-            show_news = st.checkbox("📰 News Sentiment Analysis", value=True,
+            show_news = st.checkbox("News Sentiment Analysis", value=True,
                                   help="AI-powered news sentiment analysis for market insights")
-            use_ml_backtest = st.checkbox("🤖 ML-Enhanced Backtesting", value=True,
+            use_ml_backtest = st.checkbox("ML-Enhanced Backtesting", value=True,
                                         help="Use machine learning for adaptive strategy backtesting")
             
         with col2:
-            show_backtest = st.checkbox("📊 Advanced Backtesting", value=True,
+            show_backtest = st.checkbox("Advanced Backtesting", value=True,
                                       help="Comprehensive backtesting with detailed analytics")
-            save_results = st.checkbox("💾 Save to Database", value=True,
+            save_results = st.checkbox("Save to Database", value=True,
                                      help="Store analysis results in database for historical tracking")
-            enable_alerts = st.checkbox("🔔 Trading Alerts", value=False,
+            enable_alerts = st.checkbox("Trading Alerts", value=False,
                                       help="Enable trading signal alerts and notifications")
         
         # Trading simulator toggle
@@ -479,7 +478,7 @@ def main():
         help_system.add_help_sidebar()
         
         if trading_mode:
-            st.subheader("💰 Trading Simulator")
+            st.subheader("Trading Simulator")
             if 'portfolio_balance' not in st.session_state:
                 st.session_state.portfolio_balance = 1000.0  # Starting with $1000
             if 'portfolio_holdings' not in st.session_state:
@@ -535,15 +534,15 @@ def main():
                         sentiment_summary = None
                         if show_news:
                             try:
-                                with st.spinner("🔄 Analyzing news sentiment..."):
+                                with st.spinner("Analyzing news sentiment..."):
                                     news_analyzer = NewsSentimentAnalyzer()
                                     news_data = news_analyzer.get_stock_news(stock_symbol, limit=15)
                                     
                                     if news_data:
                                         sentiment_summary = news_analyzer.get_overall_sentiment(news_data)
-                                        st.success(f"✅ Analyzed {len(news_data)} news articles for sentiment")
+                                        st.success(f"Analyzed {len(news_data)} news articles for sentiment")
                                     else:
-                                        st.info("📰 No recent news articles found for this stock")
+                                        st.info("No recent news articles found for this stock")
                                         news_data = None
                                         sentiment_summary = None
                             except Exception as e:
@@ -555,7 +554,7 @@ def main():
                         backtest_results = None
                         if show_backtest:
                             try:
-                                with st.spinner("🤖 Running ML-enhanced backtesting..."):
+                                with st.spinner("Running ML-enhanced backtesting..."):
                                     enhanced_engine = EnhancedBacktestingEngine(initial_capital=10000)
                                     backtest_results = enhanced_engine.run_comprehensive_backtest(
                                         stock_symbol, 
@@ -566,7 +565,7 @@ def main():
                                     if backtest_results.get('error'):
                                         st.warning(f"Enhanced backtesting: {backtest_results['error']}")
                                     else:
-                                        st.success(f"✅ Completed ML backtesting with {backtest_results['performance_metrics'].get('total_trades', 0)} trades")
+                                        st.success(f"Completed ML backtesting with {backtest_results['performance_metrics'].get('total_trades', 0)} trades")
                             except Exception as e:
                                 st.warning(f"Enhanced backtesting error: {e}")
                                 # Fallback to basic backtesting
@@ -589,7 +588,7 @@ def main():
                             'last_updated': datetime.now()
                         }
                         st.session_state.current_symbol = stock_symbol
-                        st.success(f"✅ Successfully loaded comprehensive data for {stock_symbol}")
+                        st.success(f"Successfully loaded comprehensive data for {stock_symbol}")
                     else:
                         st.error(f"No data found for symbol '{stock_symbol}'. Please check the symbol and try again.")
                         st.session_state.stock_data = None
@@ -607,7 +606,7 @@ def main():
         
         # Countdown timer
         for remaining in range(refresh_interval, 0, -1):
-            countdown_placeholder.info(f"🔄 Auto-refresh in {remaining} seconds...")
+            countdown_placeholder.info(f"Auto-refresh in {remaining} seconds...")
             time.sleep(1)
         
         countdown_placeholder.empty()
@@ -618,7 +617,7 @@ def main():
         display_stock_analysis(chart_type)
     else:
         # Welcome message
-        st.info("👆 Enter a stock symbol in the sidebar to get started!")
+        st.info("Enter a stock symbol in the sidebar to get started!")
         
         # Sample symbols
         st.subheader("Popular Stock Symbols")
@@ -667,7 +666,7 @@ def display_stock_analysis(chart_type):
         signal_color = signal_color_map.get(trading_signal.get('color', 'gray'), '#888888')
         st.markdown(
             f"<div style='padding: 20px; background-color: {signal_color}20; border-left: 5px solid {signal_color}; border-radius: 5px;'>"
-            f"<h2 style='color: {signal_color}; margin: 0;'>🚨 TRADING SIGNAL: {trading_signal.get('signal', 'UNKNOWN')}</h2>"
+            f"<h2 style='color: {signal_color}; margin: 0;'>TRADING SIGNAL: {trading_signal.get('signal', 'UNKNOWN')}</h2>"
             f"<p style='margin: 5px 0; color: #FAFAFA;'>Signal Strength: {trading_signal.get('strength', 0):.1f}</p>"
             f"</div>", 
             unsafe_allow_html=True
@@ -683,7 +682,7 @@ def display_stock_analysis(chart_type):
     
     # Signal reasons
     if trading_signal.get('reasons'):
-        st.subheader("📋 Signal Analysis")
+        st.subheader("Signal Analysis")
         for reason in trading_signal['reasons']:
             st.write(f"• {reason}")
     
@@ -695,7 +694,7 @@ def display_stock_analysis(chart_type):
         st.markdown("""
         <div style="background: linear-gradient(135deg, #262730 0%, #1a1a2e 100%); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; border: 1px solid #404040;">
             <h2 style="color: #00FF88; margin: 0; display: flex; align-items: center;">
-                📊 Market Sentiment & Analyst Consensus
+                Market Sentiment & Analyst Consensus
                 <span style="margin-left: auto; font-size: 0.8rem; color: #CCCCCC;">Professional Analysis</span>
             </h2>
         </div>
@@ -760,7 +759,7 @@ def display_stock_analysis(chart_type):
         
         # Analyst recommendations breakdown
         if buy_sell_data['analyst_recommendations']:
-            st.subheader("📈 Analyst Recommendations")
+            st.subheader("Analyst Recommendations")
             rec_data = buy_sell_data['analyst_recommendations']
             
             rec_col1, rec_col2, rec_col3, rec_col4, rec_col5 = st.columns(5)
@@ -784,7 +783,7 @@ def display_stock_analysis(chart_type):
         st.markdown("""
         <div style="background: linear-gradient(135deg, #262730 0%, #1a1a2e 100%); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; border: 1px solid #404040;">
             <h2 style="color: #00FF88; margin: 0; display: flex; align-items: center;">
-                📰 News Sentiment Analysis
+                News Sentiment Analysis
                 <span style="margin-left: auto; font-size: 0.8rem; color: #CCCCCC;">Real-time Market Intelligence</span>
             </h2>
         </div>
@@ -855,7 +854,7 @@ def display_stock_analysis(chart_type):
             st.markdown(
                 f"""
                 <div style="background: linear-gradient(135deg, {impact_color}20 0%, {impact_color}10 100%); border-left: 4px solid {impact_color}; border-radius: 10px; padding: 1.5rem; margin: 1rem 0;">
-                    <h4 style="color: {impact_color}; margin: 0;">📊 Market Impact Assessment</h4>
+                    <h4 style="color: {impact_color}; margin: 0;">Market Impact Assessment</h4>
                     <p style="margin: 0.5rem 0 0 0; color: #FAFAFA; font-size: 1.1rem;">{impact_assessment['expected_movement']}</p>
                     <small style="color: #CCCCCC;">Confidence Level: {impact_assessment['confidence']:.0f}%</small>
                 </div>
@@ -866,7 +865,7 @@ def display_stock_analysis(chart_type):
         # Recent news articles with enhanced display
         st.markdown("""
         <div style="background: linear-gradient(135deg, #262730 0%, #1a1a2e 100%); border-radius: 12px; padding: 1rem; margin: 1rem 0; border: 1px solid #404040;">
-            <h3 style="color: #00FF88; margin: 0;">📄 Recent News Articles</h3>
+            <h3 style="color: #00FF88; margin: 0;">Recent News Articles</h3>
         </div>
         """, unsafe_allow_html=True)
         
@@ -875,7 +874,7 @@ def display_stock_analysis(chart_type):
                 # Enhanced expander with professional styling
                 title_display = f"{article['title'][:80]}..." if len(article['title']) > 80 else article['title']
                 
-                with st.expander(f"📰 {title_display}", expanded=False):
+                with st.expander(f"{title_display}", expanded=False):
                     col_content, col_sentiment = st.columns([3, 1])
                     
                     with col_content:
@@ -907,13 +906,13 @@ def display_stock_analysis(chart_type):
                             unsafe_allow_html=True
                         )
         else:
-            st.info("📰 No recent news articles available for this symbol. News sentiment analysis requires active news coverage.")
+            st.info("No recent news articles available for this symbol. News sentiment analysis requires active news coverage.")
     else:
         # Show message when news sentiment is disabled
         if not data.get('news_data') and data.get('symbol'):
             st.markdown("""
             <div style="background: #262730; border-radius: 12px; padding: 1.5rem; margin: 1rem 0; border: 1px solid #404040;">
-                <h3 style="color: #FFD700; margin: 0;">📰 News Sentiment Analysis</h3>
+                <h3 style="color: #FFD700; margin: 0;">News Sentiment Analysis</h3>
                 <p style="margin: 0.5rem 0 0 0; color: #CCCCCC;">Enable "Show News Sentiment" in the sidebar to view real-time news analysis for market insights.</p>
             </div>
             """, unsafe_allow_html=True)
@@ -926,7 +925,7 @@ def display_stock_analysis(chart_type):
         symbol = data['symbol']
         
         with col_buy:
-            if st.button(f"🟢 BUY {symbol}", type="primary"):
+            if st.button(f"BUY {symbol}", type="primary"):
                 if investment_amount <= st.session_state.portfolio_balance:
                     shares = investment_amount / current_price
                     
@@ -951,7 +950,7 @@ def display_stock_analysis(chart_type):
         
         with col_sell:
             if symbol in st.session_state.portfolio_holdings and st.session_state.portfolio_holdings[symbol]['shares'] > 0:
-                if st.button(f"🔴 SELL {symbol}", type="secondary"):
+                if st.button(f"SELL {symbol}", type="secondary"):
                     shares_to_sell = min(
                         investment_amount / current_price,
                         st.session_state.portfolio_holdings[symbol]['shares']
@@ -977,7 +976,7 @@ def display_stock_analysis(chart_type):
     
     # Real-time update indicator
     last_updated = data.get('last_updated', datetime.now())
-    st.info(f"🕐 Last Updated: {last_updated.strftime('%Y-%m-%d %H:%M:%S')} | Next update in real-time mode")
+    st.info(f"Last Updated: {last_updated.strftime('%Y-%m-%d %H:%M:%S')} | Next update in real-time mode")
     
     # Header with basic info
     col1, col2, col3, col4 = st.columns(4)
@@ -1009,7 +1008,7 @@ def display_stock_analysis(chart_type):
         )
     
     # Charts section
-    st.subheader(f"📊 {symbol} Price Chart")
+    st.subheader(f"{symbol} Price Chart")
     
     chart_generator = ChartGenerator()
     
@@ -1030,7 +1029,7 @@ def display_stock_analysis(chart_type):
     col1, col2 = st.columns(2)
     
     with col1:
-        st.subheader("📋 Historical Data")
+        st.subheader("Historical Data")
         
         # Prepare data for display
         display_data = historical_data.copy()
@@ -1049,14 +1048,14 @@ def display_stock_analysis(chart_type):
         csv_data = csv_buffer.getvalue()
         
         st.download_button(
-            label="📥 Download Historical Data (CSV)",
+            label="Download Historical Data (CSV)",
             data=csv_data,
             file_name=f"{symbol}_historical_data_{datetime.now().strftime('%Y%m%d')}.csv",
             mime="text/csv"
         )
     
     with col2:
-        st.subheader("💼 Company Information")
+        st.subheader("Company Information")
         
         # Company info table
         info_data = {
@@ -1083,14 +1082,14 @@ def display_stock_analysis(chart_type):
         csv_info_data = csv_buffer_info.getvalue()
         
         st.download_button(
-            label="📥 Download Company Info (CSV)",
+            label="Download Company Info (CSV)",
             data=csv_info_data,
             file_name=f"{symbol}_company_info_{datetime.now().strftime('%Y%m%d')}.csv",
             mime="text/csv"
         )
     
     # Technical indicators section
-    st.subheader("📈 Technical Analysis")
+    st.subheader("Technical Analysis")
     
     # Technical indicators chart (data already has indicators calculated)
     tech_fig = chart_generator.create_technical_chart(historical_data, symbol)
@@ -1139,7 +1138,7 @@ def display_stock_analysis(chart_type):
     
     # Portfolio Display Section
     if 'portfolio_holdings' in st.session_state and st.session_state.portfolio_holdings:
-        st.subheader("📊 Portfolio Holdings")
+        st.subheader("Portfolio Holdings")
         
         portfolio_data = []
         total_portfolio_value = st.session_state.portfolio_balance
@@ -1268,7 +1267,7 @@ def display_stock_analysis(chart_type):
             help_system.show_detailed_help('max_drawdown')
         
         # Advanced metrics row
-        st.markdown("### 📊 Advanced Performance Metrics")
+        st.markdown("### Advanced Performance Metrics")
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
@@ -1329,19 +1328,19 @@ def display_stock_analysis(chart_type):
             
             with col1:
                 if analysis.get('strengths'):
-                    st.markdown("#### ✅ Strategy Strengths")
+                    st.markdown("#### Strategy Strengths")
                     for strength in analysis['strengths']:
                         st.success(f"✓ {strength}")
             
             with col2:
                 if analysis.get('recommendations'):
-                    st.markdown("#### 💡 Optimization Recommendations")
+                    st.markdown("#### Optimization Recommendations")
                     for rec in analysis['recommendations']:
                         st.info(f"→ {rec}")
         
         # ML Adaptation timeline
         if backtest.get('adaptation_events'):
-            st.markdown("#### 🤖 Machine Learning Adaptations")
+            st.markdown("#### Machine Learning Adaptations")
             
             adaptation_df = pd.DataFrame([
                 {
@@ -1356,23 +1355,23 @@ def display_stock_analysis(chart_type):
                 st.dataframe(adaptation_df, use_container_width=True)
                 
                 # Educational insights about ML performance
-                st.markdown("#### 🎓 Educational Insights")
+                st.markdown("#### Educational Insights")
                 insights = help_system.get_educational_insights(backtest)
                 for insight in insights:
                     st.info(insight)
             
             # Real-time learning status
-            st.markdown("#### 🧠 Continuous Learning Status")
+            st.markdown("#### Continuous Learning Status")
             learning_status = "AI continuously adapts trading strategies based on real-time market performance"
-            st.success(f"✅ {learning_status}")
+            st.success(f"{learning_status}")
             
             if len(backtest.get('adaptation_events', [])) > 0:
                 last_adaptation = backtest['adaptation_events'][-1]
-                st.info(f"🔄 Last adaptation: Day {last_adaptation.get('day', 0)} - {last_adaptation.get('event', 'Unknown')}")
+                st.info(f"Last adaptation: Day {last_adaptation.get('day', 0)} - {last_adaptation.get('event', 'Unknown')}")
         
         # Portfolio performance visualization
         if 'charts' in backtest and backtest['charts']:
-            st.markdown("#### 📈 Portfolio Performance Visualization")
+            st.markdown("#### Portfolio Performance Visualization")
             try:
                 import json
                 portfolio_chart_data = json.loads(backtest['charts']['portfolio_chart'])
@@ -1384,7 +1383,7 @@ def display_stock_analysis(chart_type):
         st.warning(f"Backtesting Error: {data['backtest_results']['error']}")
         
         # Simple trading statistics fallback
-        st.subheader("📈 Trading Performance")
+        st.subheader("Trading Performance")
         col1, col2, col3, col4 = st.columns(4)
         
         if data.get('backtest_results'):
@@ -1412,7 +1411,7 @@ def display_stock_analysis(chart_type):
         
         # Simple performance chart
         if data.get('backtest_results', {}).get('daily_values') and len(data['backtest_results']['daily_values']) > 0:
-            st.subheader("📊 Portfolio Value Over Time")
+            st.subheader("Portfolio Value Over Time")
             
             backtest = data['backtest_results']
             portfolio_df = pd.DataFrame({
@@ -1470,7 +1469,7 @@ def display_stock_analysis(chart_type):
                 st.plotly_chart(fig, use_container_width=True)
         
         # Strategy assessment
-        st.subheader("🎯 Strategy Assessment")
+        st.subheader("Strategy Assessment")
         
         # Calculate strategy rating
         score = 0
@@ -1487,19 +1486,19 @@ def display_stock_analysis(chart_type):
         elif backtest['max_drawdown_pct'] < 20: score += 1
         
         if score >= 7:
-            rating = "🟢 Excellent Strategy"
+            rating = "Excellent Strategy"
             rating_color = "green"
             recommendation = "Strong buy signal strategy with good risk management"
         elif score >= 5:
-            rating = "🟡 Good Strategy"
+            rating = "Good Strategy"
             rating_color = "orange"
             recommendation = "Decent strategy but monitor risk levels"
         elif score >= 3:
-            rating = "🟠 Average Strategy"
+            rating = "Average Strategy"
             rating_color = "orange"
             recommendation = "Strategy shows potential but needs improvement"
         else:
-            rating = "🔴 Poor Strategy"
+            rating = "Poor Strategy"
             rating_color = "red"
             recommendation = "Strategy underperforms - consider adjustments"
         
