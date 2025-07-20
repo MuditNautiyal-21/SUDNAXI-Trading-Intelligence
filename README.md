@@ -1,4 +1,5 @@
 # SUDNAXI - Professional Stock Trading Analysis Platform
+**S**mart **U**nified **D**ecision-making **N**etwork for **A**sset **X**telligence & **I**nsights
 
 ![Banner](assets/banner.PNG)
 
