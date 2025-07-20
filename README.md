@@ -9,7 +9,7 @@ What started as a personal project to improve my own trading decisions has evolv
 
 ## Why I Built This
 
-As someone who's been trading for years, I was frustrated by:
+As someone who's been trying trading concepts for years, I was frustrated by:
 - Jumping between multiple platforms for different data
 - Manually calculating technical indicators
 - Missing important news that moved markets
