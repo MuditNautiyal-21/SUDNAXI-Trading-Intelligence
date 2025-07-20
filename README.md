@@ -258,4 +258,4 @@ For technical issues:
 
 ---
 
-**SUDNAXI Trading Platform** - Professional Trading Intelligence System
+**SUDNAXI** - Trading Intelligence System
