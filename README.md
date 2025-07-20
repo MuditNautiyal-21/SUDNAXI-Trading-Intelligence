@@ -1,5 +1,7 @@
 # SUDNAXI - Professional Stock Trading Analysis Platform
 
+![Banner](assets/banner.PNG)
+
 After years of manually tracking stocks and struggling with fragmented tools, I built SUDNAXI to bring everything together in one powerful platform. This isn't just another trading app - it's a complete trading intelligence system that I've refined through countless hours of backtesting and real market experience.
 
 What started as a personal project to improve my own trading decisions has evolved into a professional-grade platform that combines real-time market data, advanced technical analysis, and machine learning insights.
@@ -30,12 +32,16 @@ So I built SUDNAXI to solve these problems once and for all.
 - Paper trading simulator to test strategies risk-free
 - Smart position sizing based on actual risk assessment
 
+![News Sentiment](assets/news_setiment_analysis.PNG)
+
 ### Advanced Features
 - **Adaptive AI Strategies**: Real-time learning with 30-minute adaptation cycles
 - **Continuous Learning Engine**: Strategy enhancement based on performance
 - **Professional UI/UX**: Dark theme optimized for extended trading sessions
 - **Interactive Charts**: Multiple chart types with signal overlays
 - **Comprehensive Help System**: Educational tooltips and trading insights
+
+![Adcance Features](assets/advance_features_help_system.PNG)
 
 ## Getting Started
 
@@ -147,6 +153,8 @@ Everything runs locally on your machine - no cloud dependencies or subscription 
 - Technical indicator calculations
 - Volume and trend analysis
 
+![Chart Preview](assets/chart_preview.PNG)
+
 ### Machine Learning
 - Adaptive strategy optimization
 - Performance-based learning cycles
@@ -154,12 +162,16 @@ Everything runs locally on your machine - no cloud dependencies or subscription 
 - Risk-adjusted position sizing
 - Backtesting with 1000+ trade generation
 
+![ML Adaptation](assets/ml_adaptation.PNG) ![Technical Analysis](assets/technical_analysis.PNG)
+
 ### User Interface
 - Professional dark theme
 - Interactive charts with zoom and hover
 - Real-time data refresh
 - Comprehensive help tooltips
 - Mobile-responsive design
+
+![Dashboard](assets/dashboard.PNG)
 
 ## Performance Optimization
 
