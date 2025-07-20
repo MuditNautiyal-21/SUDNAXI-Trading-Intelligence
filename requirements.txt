@@ -105,7 +105,7 @@ requests==2.32.4
 rich==10.14.0
 rpds-py==0.26.0
 scikit-image==0.25.2
-scikit-learn==1.7.0
+scikit-learn==0.25.2,<1.7.0
 scipy==1.13.1
 selenium==4.33.0
 shiboken6==6.9.1
