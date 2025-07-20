@@ -1185,7 +1185,7 @@ def display_stock_analysis(chart_type):
         st.markdown("""
         <div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 16px; padding: 2rem; margin: 1rem 0; border: 1px solid #475569; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
             <h2 style="color: #00FF88; margin: 0; display: flex; align-items: center;">
-                🤖 ML-Enhanced Backtesting Results
+                ML-Enhanced Backtesting Results
                 <span style="margin-left: auto; font-size: 0.8rem; color: #94a3b8;">Advanced Strategy Analysis</span>
             </h2>
         </div>
