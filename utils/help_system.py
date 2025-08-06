@@ -12,7 +12,7 @@ class HelpSystem:
             'total_return': {
                 'title': 'Total Return',
                 'description': 'The overall percentage gain or loss on your investment from start to finish.',
-                'example': 'If you invested $10,000 and now have $12,000, your total return is 20%.',
+                'example': 'If you invested \$10,000 and now have \$12,000, your total return is 20%.',
                 'good_range': 'Positive returns are good. 10%+ annually is excellent.'
             },
             'annualized_return': {
