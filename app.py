@@ -295,7 +295,6 @@ def main():
         
         **No Real Money**: All trades are simulated with virtual money for learning purposes
         
-        
         **Data Limitations**: Yahoo Finance free API has limitations - real trading requires premium data feeds
         
         **Educational Tool**: Use this to learn technical analysis and practice trading strategies risk-free
