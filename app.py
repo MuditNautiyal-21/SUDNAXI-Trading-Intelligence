@@ -918,17 +918,17 @@ def display_stock_analysis(chart_type):
             """, unsafe_allow_html=True)
     
     # Trading simulator actions
-    if 'trading_mode' in locals() and trading_mode and trading_signal.get('signal') != 'UNKNOWN':
+    currency = stock_info.get('currency', '$')
+    trading_mode = st.session_state.get('trading_mode', False)
+    investment_amount = st.session_state.get('investment_amount', None)
+    if trading_mode and investment_amount is not None and trading_signal.get('signal') != 'UNKNOWN':
         col_buy, col_sell = st.columns(2)
-        
         current_price = stock_info.get('currentPrice', 0)
         symbol = data['symbol']
-        
         with col_buy:
             if st.button(f"BUY {symbol}", type="primary"):
                 if investment_amount <= st.session_state.portfolio_balance:
                     shares = investment_amount / current_price
-                    
                     if symbol in st.session_state.portfolio_holdings:
                         st.session_state.portfolio_holdings[symbol]['shares'] += shares
                         st.session_state.portfolio_holdings[symbol]['avg_price'] = (
@@ -941,13 +941,11 @@ def display_stock_analysis(chart_type):
                             'shares': shares,
                             'avg_price': current_price
                         }
-                    
                     st.session_state.portfolio_balance -= investment_amount
-                    st.success(f"Bought {shares:.4f} shares of {symbol} at ${current_price:.2f}")
+                    st.success(f"Bought {shares:.4f} shares of {symbol} at {currency} {current_price:.2f}")
                     st.rerun()
                 else:
                     st.error("Insufficient balance!")
-        
         with col_sell:
             if symbol in st.session_state.portfolio_holdings and st.session_state.portfolio_holdings[symbol]['shares'] > 0:
                 if st.button(f"SELL {symbol}", type="secondary"):
@@ -955,21 +953,17 @@ def display_stock_analysis(chart_type):
                         investment_amount / current_price,
                         st.session_state.portfolio_holdings[symbol]['shares']
                     )
-                    
                     proceeds = shares_to_sell * current_price
                     st.session_state.portfolio_balance += proceeds
                     st.session_state.portfolio_holdings[symbol]['shares'] -= shares_to_sell
-                    
                     profit_loss = (current_price - st.session_state.portfolio_holdings[symbol]['avg_price']) * shares_to_sell
-                    
                     if st.session_state.portfolio_holdings[symbol]['shares'] <= 0:
                         del st.session_state.portfolio_holdings[symbol]
-                    
-                    st.success(f"Sold {shares_to_sell:.4f} shares of {symbol} at ${current_price:.2f}")
+                    st.success(f"Sold {shares_to_sell:.4f} shares of {symbol} at {currency} {current_price:.2f}")
                     if profit_loss > 0:
-                        st.success(f"Profit: ${profit_loss:.2f}")
+                        st.success(f"Profit: {currency} {profit_loss:.2f}")
                     else:
-                        st.error(f"Loss: ${abs(profit_loss):.2f}")
+                        st.error(f"Loss: {currency} {abs(profit_loss):.2f}")
                     st.rerun()
     
     st.markdown("---")
@@ -984,27 +978,24 @@ def display_stock_analysis(chart_type):
     with col1:
         st.metric(
             label="Current Price",
-            value=f"${stock_info.get('currentPrice', 0):.2f}",
+            value=f"{currency} {stock_info.get('currentPrice', 0):.2f}",
             delta=f"{stock_info.get('regularMarketChangePercent', 0):.2f}%"
         )
-    
     with col2:
         st.metric(
             label="Market Cap",
-            value=format_large_number(stock_info.get('marketCap', 0))
+            value=format_large_number(stock_info.get('marketCap', 0), currency)
         )
-    
     with col3:
         st.metric(
             label="P/E Ratio",
             value=f"{stock_info.get('trailingPE', 'N/A')}"
         )
-    
     with col4:
         st.metric(
             label="52W High/Low",
-            value=f"${stock_info.get('fiftyTwoWeekHigh', 0):.2f}",
-            delta=f"Low: ${stock_info.get('fiftyTwoWeekLow', 0):.2f}"
+            value=f"{currency} {stock_info.get('fiftyTwoWeekHigh', 0):.2f}",
+            delta=f"Low: {currency} {stock_info.get('fiftyTwoWeekLow', 0):.2f}"
         )
     
     # Charts section
@@ -1150,17 +1141,15 @@ def display_stock_analysis(chart_type):
                 current_value = holding['shares'] * current_price
                 profit_loss = (current_price - holding['avg_price']) * holding['shares']
                 profit_loss_pct = ((current_price - holding['avg_price']) / holding['avg_price']) * 100
-                
                 portfolio_data.append({
                     'Symbol': symbol,
                     'Shares': f"{holding['shares']:.4f}",
-                    'Avg Price': f"${holding['avg_price']:.2f}",
-                    'Current Price': f"${current_price:.2f}",
-                    'Current Value': f"${current_value:.2f}",
-                    'P&L': f"${profit_loss:.2f}",
+                    'Avg Price': f"{currency} {holding['avg_price']:.2f}",
+                    'Current Price': f"{currency} {current_price:.2f}",
+                    'Current Value': f"{currency} {current_value:.2f}",
+                    'P&L': f"{currency} {profit_loss:.2f}",
                     'P&L %': f"{profit_loss_pct:.2f}%"
                 })
-                
                 total_portfolio_value += current_value
         
         if portfolio_data:
@@ -1169,12 +1158,12 @@ def display_stock_analysis(chart_type):
             
             col1, col2, col3 = st.columns(3)
             with col1:
-                st.metric("Cash Balance", f"${st.session_state.portfolio_balance:.2f}")
+                st.metric("Cash Balance", f"{currency} {st.session_state.portfolio_balance:.2f}")
             with col2:
-                st.metric("Total Portfolio Value", f"${total_portfolio_value:.2f}")
+                st.metric("Total Portfolio Value", f"{currency} {total_portfolio_value:.2f}")
             with col3:
                 total_return = total_portfolio_value - 1000.0  # Starting amount was $1000
-                st.metric("Total Return", f"${total_return:.2f}", f"{(total_return/1000.0)*100:.2f}%")
+                st.metric("Total Return", f"{currency} {total_return:.2f}", f"{(total_return/1000.0)*100:.2f}%")
     
 
     # Enhanced Backtesting Results Section
@@ -1511,22 +1500,21 @@ def display_stock_analysis(chart_type):
             unsafe_allow_html=True
         )
 
-def format_large_number(num):
-    """Format large numbers with appropriate suffixes"""
+def format_large_number(num, currency='$'):
+    """Format large numbers with appropriate suffixes and currency"""
     if not num or num == 0:
         return "N/A"
-    
     num = float(num)
     if num >= 1e12:
-        return f"${num/1e12:.2f}T"
+        return f"{currency} {num/1e12:.2f}T"
     elif num >= 1e9:
-        return f"${num/1e9:.2f}B"
+        return f"{currency} {num/1e9:.2f}B"
     elif num >= 1e6:
-        return f"${num/1e6:.2f}M"
+        return f"{currency} {num/1e6:.2f}M"
     elif num >= 1e3:
-        return f"${num/1e3:.2f}K"
+        return f"{currency} {num/1e3:.2f}K"
     else:
-        return f"${num:.2f}"
+        return f"{currency} {num:.2f}"
 
 if __name__ == "__main__":
     main()
