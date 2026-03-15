@@ -1,262 +1,204 @@
-# SUDNAXI - Professional Stock Trading Analysis Platform
+# SUDNAXI - Trading Intelligence Platform
+
 **S**mart **U**nified **D**ecision-making **N**etwork for **A**sset **X**telligence & **I**nsights
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+
+> **[Live Demo](https://sudnaxi-trading-intelligence.onrender.com/)** · Real-time market data across 9 global exchanges · ML-driven signal generation · 1,000+ trade backtesting engine
 
 ![Banner](assets/banner.PNG)
 
-After years of manually tracking stocks and struggling with fragmented tools, I built SUDNAXI to bring everything together in one powerful platform. This isn't just another trading app - it's a complete trading intelligence system that I've refined through countless hours of backtesting and real market experience.
+---
 
-What started as a personal project to improve my own trading decisions has evolved into a professional-grade platform that combines real-time market data, advanced technical analysis, and machine learning insights.
+## The Problem
 
-## Why I Built This
+Retail traders work with fragmented tools - one platform for charts, another for news, a third for backtesting. Technical indicators are calculated manually, market-moving news is missed, and there is no systematic way to validate strategies before risking capital. The result: slow decisions, scattered data, and no feedback loop for improving trade quality.
 
-As someone who's been trying trading concepts for years, I was frustrated by:
-- Jumping between multiple platforms for different data
-- Manually calculating technical indicators
-- Missing important news that moved markets
-- Lack of proper backtesting tools
-- No way to learn from past decisions
+## The Solution
 
-So I built SUDNAXI to solve these problems once and for all.
+SUDNAXI consolidates real-time market intelligence, technical analysis, ML-driven signal generation, news sentiment scoring, and strategy backtesting into a single Streamlit application. One interface, nine markets, zero subscription fees.
 
-## What You Get
+---
 
-### Real-Time Market Intelligence
-- Live data from 9 major global markets (US, India, UK, Germany, Japan, China, Canada, Australia, Brazil)
-- Professional-grade technical indicators (RSI, MACD, Bollinger Bands, Moving Averages)
-- Smart signal generation with confidence scoring (-5 to +5)
-- Clear buy/sell recommendations that actually make sense
+## Demo
 
-### Advanced Analytics That Actually Work
-- Backtesting engine that runs thousands of trades to prove strategies work
-- News sentiment analysis that tracks what's really moving markets
-- Analyst recommendation tracking with price target analysis
-- Paper trading simulator to test strategies risk-free
-- Smart position sizing based on actual risk assessment
-
-![News Sentiment](assets/news_setiment_analysis.PNG)
-
-### Advanced Features
-- **Adaptive AI Strategies**: Real-time learning with 30-minute adaptation cycles
-- **Continuous Learning Engine**: Strategy enhancement based on performance
-- **Professional UI/UX**: Dark theme optimized for extended trading sessions
-- **Interactive Charts**: Multiple chart types with signal overlays
-- **Comprehensive Help System**: Educational tooltips and trading insights
-
-![Adcance Features](assets/advance_features_help_system.PNG)
-
-## Getting Started
-
-### Requirements
-- Python 3.8 or higher
-- Internet connection for market data
-
-### Installation
-
-1. **Clone or download** the project files
-2. **Install dependencies**:
-   ```bash
-   pip install -r production_requirements.txt
-   ```
-3. **Run the application**:
-   ```bash
-   python start_app.py
-   ```
-   Or use Streamlit directly:
-   ```bash
-   streamlit run app.py
-   ```
-4. **Open your browser** to `http://localhost:8501`
-
-### PyCharm Users
-Run `start_app.py` directly in PyCharm instead of `app.py` to avoid context errors.
-
-## Configuration
-
-### Environment Variables
-Create a `.env` file in the root directory with the following configurations:
-
-```env
-# Database (Optional - defaults to SQLite)
-DATABASE_URL=sqlite:///./trading_app.db
-
-# Application Settings
-DEBUG=False
-ENVIRONMENT=production
-
-# Optional API Keys
-OPENAI_API_KEY=your_openai_key_here
-NEWS_API_KEY=your_news_api_key_here
-```
-
-### Database Options
-- **SQLite** (Default): No additional setup required
-- **PostgreSQL**: Set `DATABASE_URL=postgresql://user:password@localhost:5432/trading_db`
-
-## Docker Deployment
-
-### Using Docker Compose (Recommended)
-```bash
-docker-compose up -d
-```
-
-### Manual Docker Build
-```bash
-docker build -t sudnaxi-trading .
-docker run -p 8501:8501 sudnaxi-trading
-```
-
-## Project Structure
-
-```
-sudnaxi-trading/
-├── app.py                      # Main Streamlit application
-├── config.py                   # Application configuration
-├── run_production.py           # Production launcher
-├── production_requirements.txt # Python dependencies
-├── .env.example               # Environment template
-├── database/
-│   └── models.py              # Database models
-├── ml/
-│   ├── adaptive_strategy.py   # ML trading strategies
-│   └── reinforcement_learning.py # RL components
-├── utils/
-│   ├── data_fetcher.py        # Market data retrieval
-│   ├── chart_generator.py     # Chart visualization
-│   ├── news_sentiment.py      # News analysis
-│   ├── backtesting_engine.py  # Strategy testing
-│   └── enhanced_backtesting.py # Advanced backtesting
-├── .streamlit/
-│   └── config.toml            # Streamlit configuration
-├── Dockerfile                 # Docker configuration
-├── docker-compose.yml         # Docker Compose setup
-└── README.md                  # This file
-```
-
-## How I Built This
-
-I chose technologies that are reliable and battle-tested:
-
-- **Python**: Because it's perfect for financial data analysis
-- **Streamlit**: Creates beautiful web apps without the complexity
-- **Yahoo Finance**: Reliable, free market data that institutions use
-- **SQLite**: Simple database that just works (no setup needed)
-- **Plotly**: Professional charts that look amazing
-- **Pandas**: The gold standard for data manipulation
-
-Everything runs locally on your machine - no cloud dependencies or subscription fees.
-
-## Features Overview
-
-### Trading Analysis
-- Multi-timeframe analysis (1D, 5D, 1M, 3M, 6M, 1Y, 2Y, 5Y)
-- Global market coverage with 500+ stocks
-- Real-time price updates and alerts
-- Technical indicator calculations
-- Volume and trend analysis
-
-![Chart Preview](assets/chart_preview.PNG)
-
-### Machine Learning
-- Adaptive strategy optimization
-- Performance-based learning cycles
-- Signal strength enhancement
-- Risk-adjusted position sizing
-- Backtesting with 1000+ trade generation
-
-![ML Adaptation](assets/ml_adaptation.PNG) ![Technical Analysis](assets/technical_analysis.PNG)
-
-### User Interface
-- Professional dark theme
-- Interactive charts with zoom and hover
-- Real-time data refresh
-- Comprehensive help tooltips
-- Mobile-responsive design
+### Dashboard
+Track live prices, portfolio metrics, and market overview in a single view.
 
 ![Dashboard](assets/dashboard.PNG)
 
-## Performance Optimization
+### Technical Analysis
+Professional-grade charting with RSI, MACD, Bollinger Bands, and Moving Average overlays. Configurable across 8 timeframes (1D to 5Y).
 
-- **Caching**: Intelligent data caching for improved performance
-- **Async Processing**: Background data updates
-- **Memory Management**: Efficient data handling for large datasets
-- **API Rate Limiting**: Optimized API calls to prevent throttling
+![Technical Analysis](assets/technical_analysis.PNG)
 
-## Security Features
+### Chart Preview
+Interactive Plotly charts with zoom, hover tooltips, and signal overlays for buy/sell indicators.
 
-- Environment-based configuration
-- API key management
-- Secure database connections
-- Input validation and sanitization
-- Error handling and logging
+![Chart Preview](assets/chart_preview.PNG)
 
-## Development
+### News Sentiment Analysis
+Real-time news aggregation with NLP-based sentiment scoring to track what is actually moving markets.
 
-### Local Development Setup
+![News Sentiment Analysis](assets/news_setiment_analysis.PNG)
+
+### ML Adaptation Engine
+Adaptive AI strategies with 30-minute learning cycles that optimize signal generation based on real-time market feedback.
+
+![ML Adaptation](assets/ml_adaptation.PNG)
+
+### Backtesting Engine
+Run strategy simulations across 1,000+ generated trades with performance metrics, drawdown analysis, and risk-adjusted returns.
+
+![ML Backtesting](assets/ml_backtesting.PNG)
+
+### Advanced Features & Help System
+Built-in educational tooltips, trading terminology glossary, and contextual help for every feature.
+
+![Advanced Features](assets/advance_features_help_system.PNG)
+
+---
+
+## Key Features
+
+**Market Coverage**
+- Live data from 9 global exchanges: US, India, UK, Germany, Japan, China, Canada, Australia, Brazil
+- 500+ stock symbols with real-time price updates
+- Multi-timeframe analysis: 1D, 5D, 1M, 3M, 6M, 1Y, 2Y, 5Y
+
+**Technical Analysis**
+- RSI, MACD, Bollinger Bands, SMA/EMA overlays
+- Smart signal generation with confidence scoring (-5 to +5)
+- Volume and trend analysis with interactive Plotly charts
+
+**Machine Learning**
+- Adaptive strategy optimization with 30-minute learning cycles
+- Reinforcement learning components for signal enhancement
+- Risk-adjusted position sizing based on portfolio volatility
+
+**Backtesting & Simulation**
+- Strategy validation engine generating 1,000+ simulated trades
+- Paper trading simulator for risk-free strategy testing
+- Performance analytics: Sharpe ratio, max drawdown, win rate
+
+**News Intelligence**
+- Aggregated news feed with NLP sentiment analysis
+- Analyst recommendation tracking with price target analysis
+- Market-moving event detection and alerting
+
+---
+
+## Architecture
+
+```
+sudnaxi-trading/
+├── app.py                          # Main Streamlit application
+├── config.py                       # Centralized configuration
+├── constants.py                    # Market symbols, exchange mappings
+├── start_app.py                    # Production launcher
+├── core/                           # Core business logic
+├── ml/
+│   ├── adaptive_strategy.py        # ML-driven trading strategies
+│   └── reinforcement_learning.py   # RL signal optimization
+├── utils/
+│   ├── data_fetcher.py             # Yahoo Finance API integration
+│   ├── chart_generator.py          # Plotly chart rendering
+│   ├── news_sentiment.py           # NLP news analysis
+│   ├── backtesting_engine.py       # Strategy simulation engine
+│   └── enhanced_backtesting.py     # Advanced backtesting analytics
+├── database/
+│   └── models.py                   # SQLite/PostgreSQL ORM models
+├── assets/                         # Screenshots and static assets
+├── Dockerfile                      # Container configuration
+├── docker-compose.yml              # Multi-service orchestration
+└── production_requirements.txt     # Pinned dependencies
+```
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| Frontend | Streamlit | Interactive web application |
+| Visualization | Plotly | Professional-grade interactive charts |
+| Data Processing | Pandas, NumPy | Financial data manipulation |
+| Market Data | Yahoo Finance API | Real-time and historical price feeds |
+| ML Engine | Scikit-learn, Custom RL | Adaptive strategy optimization |
+| Database | SQLite / PostgreSQL | Trade history and user data |
+| Deployment | Docker, Render | Containerized cloud deployment |
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Python 3.8+
+- Internet connection (for live market data)
+
+### Local Setup
+
 ```bash
+# Clone the repository
+git clone https://github.com/MuditNautiyal-21/SUDNAXI-Trading-Intelligence.git
+cd SUDNAXI-Trading-Intelligence
+
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate        # Linux/macOS
+venv\Scripts\activate           # Windows
 
 # Install dependencies
 pip install -r production_requirements.txt
 
-# Run in development mode
-streamlit run app.py
+# Run the application
+python start_app.py
 ```
 
-### Adding New Features
-1. Create feature branch
-2. Implement functionality in appropriate module
-3. Update configuration if needed
-4. Test thoroughly
-5. Update documentation
+Open `http://localhost:8501` in your browser.
 
-## If Something Goes Wrong
+### Docker
 
-I've tested this extensively, but here are fixes for common issues:
+```bash
+# Using Docker Compose (recommended)
+docker-compose up -d
 
-**App won't start**:
-- Make sure Python 3.8+ is installed
-- Run `pip install --upgrade pip` first
-- Try the setup script again
+# Or manual build
+docker build -t sudnaxi .
+docker run -p 8501:8501 sudnaxi
+```
 
-**Slow performance**:
-- Reduce the time range (try 1 month instead of 1 year)
-- Refresh your browser
-- Close other browser tabs
+### Environment Variables (Optional)
 
-**Can't connect to data**:
-- Check your internet connection
-- Wait a few minutes (Yahoo Finance has rate limits)
-- Try a different stock symbol
+Create a `.env` file in the root directory:
 
-**Installation issues**:
-- Use a virtual environment (the setup script creates one)
-- Make sure you have admin rights on Windows
+```
+DATABASE_URL=sqlite:///./trading_app.db
+OPENAI_API_KEY=your_key_here
+NEWS_API_KEY=your_key_here
+```
 
-## Development Notes
-
-This system was built with a focus on reliability, performance, and user experience. The architecture is designed to be maintainable and extensible, with clear separation of concerns between data processing, analysis, and presentation layers.
-
-Key design decisions:
-- SQLite for local development with PostgreSQL support for production
-- Modular architecture for easy feature additions
-- Comprehensive error handling and fallback mechanisms
-- Real-time data processing with intelligent caching
-- Professional UI/UX optimized for trading workflows
-
-## License
-
-MIT License - Open source and free to use.
-
-## Technical Support
-
-For technical issues:
-- Check the troubleshooting section
-- Verify Python version compatibility
-- Ensure all dependencies are installed
-- Check database connections and API access
+Defaults to SQLite - no additional database setup required.
 
 ---
 
-**SUDNAXI** - Trading Intelligence System
+## My Role
+
+Designed and built the entire platform end-to-end as a solo project:
+
+- Architected the modular Python backend with clear separation between data fetching, analysis, ML, and presentation layers
+- Built the adaptive ML strategy engine with 30-minute retraining cycles and reinforcement learning signal optimization
+- Implemented the backtesting simulation engine capable of generating and evaluating 1,000+ trades per strategy
+- Integrated Yahoo Finance API with intelligent caching and rate limiting for 9 global exchanges
+- Designed the dark-themed Streamlit UI optimized for extended trading sessions
+- Containerized with Docker and deployed to Render for public access
+
+---
+
+## License
+
+MIT License — see [LICENSE](LICENSE) for details.
